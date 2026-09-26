@@ -1,0 +1,51 @@
+header {
+  background-color: #000000;
+  padding: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 20px;
+  grid-area: main;
+}
+
+.nav-section {
+  grid-area: nav;
+}
+
+.playlist-section {
+  grid-area: playlist;
+}
+
+.form-section {
+  grid-area: form;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+#wrapper {
+    display: grid;
+    grid-template: 
+    "header header" auto
+    "nav hero" auto
+    "playlist main" auto
+    "form main" auto
+    "footer footer" auto
+                / 200px auto;
+}
+
+#homehero {
+    background-image: url("images/froggy/DSC_0032-1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 300px;
+}
