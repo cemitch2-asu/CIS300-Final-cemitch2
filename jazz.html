@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jazz | PHX On Air</title>
+	<link rel="stylesheet" href="../final.css">
+</head>
+<body>
+	<div id="wrapper" class="scene-wrapper">
+		<header>
+			<h1><a href="../index.html">PHX ON AIR</a></h1>
+		</header>
+		<nav class="scene-nav" aria-label="Main navigation">
+			<ul>
+				<li><a href="../index.html">HOME</a></li>
+				<li><a href="jazz.html">JAZZ</a></li>
+				<li><a href="alt.html">ALTERNATIVE</a></li>
+				<li><a href="rnb.html">RnB</a></li>
+				<li><a href="../gallery.html">GALLERY</a></li>
+			</ul>
+		</nav>
+		<main class="scene-page">
+			<h1>Jazz</h1>
+			<section class="scene-description">
+				<h2>About Jazz</h2>
+				<p>Jazz is a musical tradition built on improvisation, expressive melodies, and a rhythm that keeps evolving. From intimate combos to big bands, each performance leaves room for musicians to make the song their own.</p>
+			</section>
+			<section class="scene-artists">
+				<h2>Notable Artists</h2>
+				<ul>
+					<li>Ella Fitzgerald</li>
+					<li>Miles Davis</li>
+					<li>Duke Ellington</li>
+					<li>Thelonious Monk</li>
+				</ul>
+			</section>
+			<section class="scene-carousel" data-genre="Jazz" data-images="../images/chalcogen/chalcogen1.jpg|../images/chalcogen/chalcogen2.jpg|../images/chalcogen/chalcogen3.jpg|../images/chalcogen/chalcogen4.jpg">
+				<img src="../images/chalcogen/chalcogen1.jpg" alt="Jazz scene photo 1">
+				<div class="carousel-controls">
+					<button type="button" data-direction="previous" aria-label="Previous jazz photo">Previous</button>
+					<span class="carousel-count" aria-live="polite"></span>
+					<button type="button" data-direction="next" aria-label="Next jazz photo">Next</button>
+				</div>
+			</section>
+			<section class="scene-player">
+				<h2>Listen to Jazz</h2>
+				<audio controls preload="none" aria-label="Jazz audio player"></audio>
+				<p>Add a jazz audio file here when one is available.</p>
+			</section>
+		</main>
+		<footer><p><a href="../index.html">PHX On Air home</a></p></footer>
+	</div>
+	<script src="carousel.js"></script>
+</body>
+</html>
