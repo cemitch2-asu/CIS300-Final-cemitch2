@@ -17,6 +17,7 @@ header:hover,
 header:hover * {
   color: blue;
   background-color: #fff;
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
 }
 
 header a {
@@ -57,19 +58,14 @@ nav ul li:hover {
   background-color: white;
 }
 
+nav ul li:not(.dropdown):hover,
+nav ul li:not(.dropdown):hover > a {
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
+}
+
 nav ul li:hover > a {
   color: blue;
   background-color: white;
-}
-
-nav ul li.dropdown > a:hover {
-  color: white;
-}
-
-nav ul li.dropdown:hover,
-nav ul li.dropdown:hover > a {
-  color: white;
-  background-color: red;
 }
 
 main {
@@ -113,15 +109,75 @@ main p {
   100% { opacity: 0.99; }
 }
 
+@keyframes hover-color-blink {
+  0%, 49% {
+    color: #fff;
+    background-color: blue;
+    border-color: #fff;
+  }
+  50%, 100% {
+    color: blue;
+    background-color: #fff;
+    border-color: blue;
+  }
+}
 
-
+.welcome-box,
 .statement-box,
 .offers-box,
 .about-box {
   padding: 16px;
+  color: blue;
+  background-color: #fff;
+  border: 2px dotted white;
+}
+
+.welcome-box {
+  grid-column: 1 / -1;
+  padding: 24px;
+}
+
+.welcome-kicker {
+  margin: 0 0 8px;
+  color: red;
+  background-color: #fff;
+  font-size: 0.8rem;
+}
+
+.welcome-box h2 {
+  color: blue;
+  background-color: #fff;
+  font-size: 1.8rem;
+}
+
+.welcome-box > p:not(.welcome-kicker) {
+  max-width: 68ch;
   color: #111;
   background-color: #fff;
-  border: 2px solid #111;
+  line-height: 1.6;
+}
+
+.welcome-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  background-color: #fff;
+}
+
+.welcome-links a {
+  padding: 8px 10px;
+  color: blue;
+  background-color: #fff;
+  border: 1px dotted blue;
+  text-decoration: none;
+}
+
+.welcome-links a:hover,
+.welcome-links a:focus-visible {
+  color: #fff;
+  background-color: blue;
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
 }
 
 .statement-box,
@@ -131,29 +187,65 @@ main p {
 
 .about-box {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 1.6fr;
+  align-items: center;
+  gap: 16px;
 }
 
-.offers-box table {
-  width: 100%;
-  border-collapse: collapse;
+.about-box h2 {
+  grid-column: 1 / -1;
+  color: blue;
+  background-color: #fff;
 }
 
-.offers-box td {
-  width: 50%;
-  padding: 12px;
+.statement-box h2,
+.offers-box h2 {
+  color: blue;
+  background-color: #fff;
+}
+
+.statement-box p {
   color: #111;
   background-color: #fff;
-  border: 2px solid #111;
+  line-height: 1.6;
 }
 
-.about-image-box {
-  width: 100%;
-  max-width: 500px;
-  height: 220px;
-  margin-bottom: 12px;
-  overflow: hidden;
-  border: 2px solid #111;
+.offers-box ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  list-style: none;
 }
+
+.offers-box li {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 8px;
+  color: #111;
+  background-color: #fff;
+  border-bottom: 1px dotted blue;
+}
+
+.offers-box li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.offers-box li strong,
+.offers-box li span {
+  color: #111;
+  background-color: #fff;
+}
+
+.about-box > p {
+  color: #111;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
 
 .about-image-box img {
   display: block;
@@ -175,10 +267,23 @@ footer p {
 }
 
 footer p:hover {
-  margin: 0;
-  padding: 10px;
   background-color: white;
   color: blue;
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
+}
+
+.email-link a {
+  display: inline-block;
+  color: #fff;
+  background-color: blue;
+  text-decoration: none;
+}
+
+.email-link:hover,
+.email-link:hover a,
+.email-link:focus-within,
+.email-link:focus-within a {
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
 }
 
 .sidebar {
@@ -195,19 +300,6 @@ footer p:hover {
   border: 2px dotted #fff;
 }
 
-.sidebar > section.playlist-section,
-.sidebar > section.form-section {
-  color: #111;
-  background-color: white;
-  border-color: blue;
-}
-
-.playlist-section > *,
-.form-section > * {
-  color: #111;
-  background-color: white;
-}
-
 .sidebar > section h2 {
   margin: 0 0 10px;
   font-size: 1rem;
@@ -216,7 +308,6 @@ footer p:hover {
 .form-section label {
   display: block;
   margin: 8px 0 4px;
-  color: #111;
 }
 
 .playlist-section audio,
@@ -233,8 +324,6 @@ footer p:hover {
 .form-section textarea,
 .form-section button {
   padding: 6px;
-  color: #111;
-  background-color: white;
   border: 1px solid blue;
 }
 
@@ -242,9 +331,37 @@ footer p:hover {
   height: 36px;
 }
 
+.sidebar > section.highlight-section,
 .highlight-section > * {
+  color: blue;
+  background-color: white;
+}
+
+.highlight-section div,
+.highlight-section div a {
+  color: blue !important;
+  background-color: white !important;
+}
+
+.sidebar > section.playlist-section,
+.playlist-section > * {
   color: #fff;
-  background-color: blue;
+  background-color: transparent;
+}
+
+.sidebar > section.form-section {
+  color: blue;
+  background-color: #fff;
+  border: 0;
+}
+
+.form-section * {
+  color: blue;
+  background-color: transparent;
+}
+
+.form-section > * {
+  font-weight: bold;
 }
 
 .highlight-section img {
@@ -259,22 +376,29 @@ footer p:hover {
   margin: 0;
 }
 
-.nav-section nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-section nav ul li {
-  text-align: center;
-}
-
 .nav-section nav ul li.dropdown {
   position: relative;
 }
 
+.nav-section nav ul li.dropdown:hover,
+.nav-section nav ul li.dropdown:focus-within {
+  color: #fff;
+  background-color: red;
+  animation: none;
+}
+
+.nav-section nav ul li.dropdown:hover > a,
+.nav-section nav ul li.dropdown:focus-within > a {
+  color: #fff;
+  background-color: red;
+  animation: none;
+}
+
 .nav-section nav ul .dropdown-menu {
   display: none;
+  background-color: transparent;
+  flex-direction: row;
+  width: max-content;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -287,7 +411,12 @@ footer p:hover {
 
 .nav-section nav ul .dropdown:hover > .dropdown-menu,
 .nav-section nav ul .dropdown:focus-within > .dropdown-menu {
-  display: grid;
+  display: flex;
+}
+
+.nav-section nav ul .dropdown-menu li:hover,
+.nav-section nav ul .dropdown-menu li:hover > a {
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
 }
 
 .scene-nav {
@@ -322,9 +451,6 @@ footer p:hover {
 }
 
 #wrapper {
-  /* border: 2px dotted #fff;
-  box-shadow: 0px 0px 10px #fff; */
-  
   display: grid;
   width: min(90%, 1100px);
   margin: 0 auto;
@@ -361,6 +487,21 @@ footer p:hover {
   width: 100%;
   height: 400px;
   object-fit: cover;
+}
+
+#carousel a {
+  display: block;
+  border: 2px solid blue;
+}
+
+#carousel a:hover,
+#carousel a:focus-visible {
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
+}
+
+#carousel a:hover img,
+#carousel a:focus-visible img {
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
 }
 
 .scene-page,
@@ -446,6 +587,38 @@ footer p:hover {
 .carousel-controls button:focus-visible {
   color: blue;
   background-color: #fff;
+  animation: hover-color-blink 0.6s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header:hover,
+  header:hover *,
+  nav ul li:not(.dropdown):hover,
+  nav ul li:not(.dropdown):hover > a,
+  .welcome-links a:hover,
+  .welcome-links a:focus-visible,
+  .welcome-box:hover,
+  .welcome-box:hover *,
+  .statement-box:hover,
+  .statement-box:hover *,
+  .offers-box:hover,
+  .offers-box:hover *,
+  .about-box:hover,
+  .about-box:hover *,
+  footer p:hover,
+  #carousel a:hover,
+  #carousel a:focus-visible,
+  #carousel a:hover img,
+  #carousel a:focus-visible img,
+  .carousel-controls button:hover,
+  .carousel-controls button:focus-visible {
+    animation: none;
+  }
+
+  .nav-section nav ul .dropdown-menu li:hover,
+  .nav-section nav ul .dropdown-menu li:hover > a {
+    animation: none;
+  }
 }
 
 .carousel-count {
@@ -515,6 +688,10 @@ footer p:hover {
   }
 
   .about-box {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-box h2 {
     grid-column: auto;
   }
 
