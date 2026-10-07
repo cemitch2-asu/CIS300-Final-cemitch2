@@ -125,7 +125,7 @@ main p {
 .welcome-box,
 .statement-box,
 .offers-box,
-.about-box {
+.about-box{
   padding: 16px;
   color: blue;
   background-color: #fff;
@@ -135,6 +135,27 @@ main p {
 .welcome-box {
   grid-column: 1 / -1;
   padding: 24px;
+}
+
+.scene-artists th {
+  padding: 5px;
+  color: blue;
+  background-color: #fff;
+  border: 2px dotted blue;
+}
+
+.scene-artists td {
+  padding: 5px;
+  color: #fff;
+  border: 2px dotted #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.scene-artists a {
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
 }
 
 .welcome-kicker {
@@ -165,8 +186,8 @@ main p {
   background-color: #fff;
 }
 
-.welcome-links a {
-  padding: 8px 10px;
+.welcome-links a, #random-scene-link a{
+  padding: 8px 100px;
   color: blue;
   background-color: #fff;
   border: 1px dotted blue;

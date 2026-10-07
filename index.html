@@ -23,9 +23,9 @@
                         <li class="dropdown">
                             <a>SCENES</a>
                             <ul class="dropdown-menu">
-                                <li><a href="jazz.html">Jazz</a></li>
-                                <li><a href="alt.html">Alternative</a></li>
-                                <li><a href="rnb.html">RnB</a></li>
+                                <li><a href="indie.html">INDIE</a></li>
+                                <li><a href="alt.html">ALT</a></li>
+                                <li><a href="rnb.html">RNB</a></li>
                             </ul>
                         </li>
                     <li><a href="gallery.html">GALLERY</a></li>
@@ -45,8 +45,8 @@
 
         <section class="playlist-section">
             <p>Check out the latest music video from our Artist of the Month!</p>
-                <video width="100%" height="300" controls poster="backsplash.png" aria-label="Artist of the Month music video">
-                <source src="Right side of my neck MV.mp4" type="video/mp4">
+                <video width="100%" height="300" controls poster="backsplash.jpeg" aria-label="Artist of the Month music video">
+                <source src="0117.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
@@ -72,8 +72,9 @@
                 <h2>Hello, Phoenix.</h2>
                 <p>Welcome to PHX On Air, a place to explore the sounds and artists connected to Phoenix. Find a new scene to follow, meet featured musicians, and take a look around the gallery.</p>
                 <nav class="welcome-links" aria-label="Explore PHX On Air">
-                    <a href="jazz.html">Explore the scenes</a>
+                    <a href="indie.html" id="random-scene-link">Explore the scenes</a>
                     <a href="gallery.html">Visit the gallery</a>
+
                 </nav>
             </section>
 
@@ -91,7 +92,7 @@
             <section class="offers-box">
                 <h2>What We Offer</h2>
                 <ul>
-                    <li><strong>Scene guides</strong><span>Explore Jazz, Alternative, and RnB.</span></li>
+                    <li><strong>Scene guides</strong><span>Explore Indie, Alternative, and RnB.</span></li>
                     <li><strong>Artist highlights</strong><span>Meet musicians featured on PHX On Air.</span></li>
                     <li><strong>Photo gallery</strong><span>Browse images from the artists and scenes.</span></li>
                 </ul>
@@ -100,9 +101,11 @@
             <section class="about-box">
                 <h2>About Us</h2>
                 <div class="about-image-box">
-                    <img src="angsirena.jpg" alt="About PHX On Air">
+                    <img src="carl2.png" alt="About PHX On Air">
                 </div>
-                <p>PHX On Air is a music discovery project built around the artists, sounds, and creative energy connected to Phoenix. It brings together listening, stories, and images for anyone curious about the city’s music.</p>
+                <p>PHX On Air is a music discovery project built by Carl Mitchell. For the past 2 years, he has been an active part of Arizonas Local
+                    scene and has been documenting the music and artists he encounters. This site is a place to share his work and provide a resource
+                    for anyone curious about the city’s music.</p>
             </section>
         </main>
 
@@ -119,6 +122,13 @@
         event.preventDefault();
         document.getElementById("form-status").textContent =
             "This form is not connected to a message service yet.";
+    });
+
+    const scenePages = ["indie.html", "alt.html", "rnb.html"];
+    document.getElementById("random-scene-link").addEventListener("click", (event) => {
+        event.preventDefault();
+        const randomIndex = Math.floor(Math.random() * scenePages.length);
+        window.location.href = scenePages[randomIndex];
     });
 
     const slideImages = [
