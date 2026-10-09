@@ -54,11 +54,13 @@
 
         <section class="form-section">
             <h2>Nominate Your Favorite Artist!</h2>
-            <form id="contact-form">
+            <form id="contact-form" action="#">
                 <label for="contact-name">Artist/Band Name</label>
                 <input id="contact-name" name="name" type="text" required>
                 <label for="contact-socialmedia">Social Media Handle</label>
                 <input id="contact-socialmedia" name="socialmedia" type="text" required>
+                <label for="steam-message">Link to Music</label>
+                <textarea id="steam-message" name="message" rows="1" required></textarea>
                 <label for="contact-message">Message</label>
                 <textarea id="contact-message" name="message" rows="3" required></textarea>
                 <button type="submit">Send</button>
